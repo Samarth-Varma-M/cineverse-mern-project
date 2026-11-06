@@ -11,15 +11,15 @@ def create_presentation():
     prs.slide_width = Inches(13.333)
     prs.slide_height = Inches(7.5) # 16:9 widescreen layout
 
-    # Color Palette (CineVerse Dark Cinema Theme)
-    BG_COLOR = RGBColor(11, 15, 25)        # Deep slate/navy #0b0f19
-    CARD_BG = RGBColor(22, 30, 49)          # Card container #161e31
-    TEXT_MAIN = RGBColor(248, 250, 252)     # White #f8fafc
-    TEXT_MUTED = RGBColor(148, 163, 184)    # Slate #94a3b8
-    ACCENT_PURPLE = RGBColor(168, 85, 247)  # Violet #a855f7
-    ACCENT_BLUE = RGBColor(99, 102, 241)    # Indigo #6366f1
-    ACCENT_GOLD = RGBColor(245, 158, 11)    # Amber Star #f59e0b
+    # Clean Cinema Palette (Matte Carbon / Dark Slate / Cinema Amber Gold)
+    BG_COLOR = RGBColor(9, 9, 11)           # Deep black #09090b
+    CARD_BG = RGBColor(18, 18, 21)          # Card container #121215
+    TEXT_MAIN = RGBColor(250, 250, 250)     # Crisp white #fafafa
+    TEXT_MUTED = RGBColor(161, 161, 170)    # Zinc #a1a1aa
+    ACCENT_GOLD = RGBColor(245, 158, 11)    # Amber Gold #f59e0b
+    ACCENT_WHITE = RGBColor(255, 255, 255)  # Clean white
     ACCENT_RED = RGBColor(239, 68, 68)      # Crimson #ef4444
+    BORDER_COLOR = RGBColor(39, 39, 46)     # Subtle border #27272e
 
     def add_slide_background(slide):
         bg = slide.shapes.add_shape(MSO_SHAPE.RECTANGLE, 0, 0, prs.slide_width, prs.slide_height)
@@ -28,8 +28,7 @@ def create_presentation():
         bg.line.fill.background()
         return bg
 
-    def add_header(slide, title_text, category="CINEVERSE MERN PROJECT"):
-        # Category Tag
+    def add_header(slide, title_text, category="CINEVERSE PLATFORM"):
         cat_box = slide.shapes.add_textbox(Inches(0.8), Inches(0.45), Inches(11), Inches(0.4))
         tf_cat = cat_box.text_frame
         tf_cat.word_wrap = True
@@ -37,9 +36,8 @@ def create_presentation():
         p_cat.text = category.upper()
         p_cat.font.size = Pt(11)
         p_cat.font.bold = True
-        p_cat.font.color.rgb = ACCENT_PURPLE
+        p_cat.font.color.rgb = ACCENT_GOLD
 
-        # Slide Title
         title_box = slide.shapes.add_textbox(Inches(0.8), Inches(0.8), Inches(11.5), Inches(0.8))
         tf = title_box.text_frame
         tf.word_wrap = True
@@ -52,21 +50,19 @@ def create_presentation():
     # ==========================================================
     # SLIDE 1: Title and Team Details
     # ==========================================================
-    slide_layout = prs.slide_layouts[6] # Blank
+    slide_layout = prs.slide_layouts[6]
     s1 = prs.slides.add_slide(slide_layout)
     add_slide_background(s1)
 
-    # Accent decorative box
     banner = s1.shapes.add_shape(MSO_SHAPE.ROUNDED_RECTANGLE, Inches(0.8), Inches(1.2), Inches(11.733), Inches(5.1))
     banner.fill.solid()
     banner.fill.fore_color.rgb = CARD_BG
-    banner.line.color.rgb = ACCENT_BLUE
+    banner.line.color.rgb = BORDER_COLOR
 
-    # Title box
     tbox = s1.shapes.add_textbox(Inches(1.2), Inches(1.5), Inches(11), Inches(2.0))
     tf1 = tbox.text_frame
     p1 = tf1.paragraphs[0]
-    p1.text = "CineVerse 🎬"
+    p1.text = "CINEVERSE 🎬"
     p1.font.size = Pt(40)
     p1.font.bold = True
     p1.font.color.rgb = TEXT_MAIN
@@ -75,19 +71,18 @@ def create_presentation():
     p1_sub.text = "Full-Stack Movie Discovery & Management Platform"
     p1_sub.font.size = Pt(22)
     p1_sub.font.bold = True
-    p1_sub.font.color.rgb = ACCENT_BLUE
+    p1_sub.font.color.rgb = ACCENT_GOLD
 
     p1_desc = tf1.add_paragraph()
-    p1_desc.text = "MERN Stack Web Development Training Program Final Capstone Project"
+    p1_desc.text = "MERN Stack Web Development Training Program — Capstone Project"
     p1_desc.font.size = Pt(14)
     p1_desc.font.color.rgb = TEXT_MUTED
 
-    # Team details table / cards
     team_box = s1.shapes.add_textbox(Inches(1.2), Inches(3.6), Inches(10.8), Inches(2.2))
     tf_team = team_box.text_frame
 
     pt = tf_team.paragraphs[0]
-    pt.text = "👥 Team Details & Contribution:"
+    pt.text = "👥 Team Details & Project Contributors:"
     pt.font.size = Pt(16)
     pt.font.bold = True
     pt.font.color.rgb = ACCENT_GOLD
@@ -119,11 +114,10 @@ def create_presentation():
     add_slide_background(s2)
     add_header(s2, "Introduction & Problem Statement", "02 / 10 | Background & Context")
 
-    # Card Left: Problem Statement
     c_left = s2.shapes.add_shape(MSO_SHAPE.ROUNDED_RECTANGLE, Inches(0.8), Inches(1.8), Inches(5.6), Inches(4.8))
     c_left.fill.solid()
     c_left.fill.fore_color.rgb = CARD_BG
-    c_left.line.color.rgb = ACCENT_RED
+    c_left.line.color.rgb = BORDER_COLOR
 
     tb_left = s2.shapes.add_textbox(Inches(1.1), Inches(2.0), Inches(5.0), Inches(4.3))
     tf_l = tb_left.text_frame
@@ -147,11 +141,10 @@ def create_presentation():
         p.font.color.rgb = TEXT_MUTED
         p.space_after = Pt(8)
 
-    # Card Right: Solution
     c_right = s2.shapes.add_shape(MSO_SHAPE.ROUNDED_RECTANGLE, Inches(6.8), Inches(1.8), Inches(5.7), Inches(4.8))
     c_right.fill.solid()
     c_right.fill.fore_color.rgb = CARD_BG
-    c_right.line.color.rgb = ACCENT_BLUE
+    c_right.line.color.rgb = BORDER_COLOR
 
     tb_right = s2.shapes.add_textbox(Inches(7.1), Inches(2.0), Inches(5.1), Inches(4.3))
     tf_r = tb_right.text_frame
@@ -160,12 +153,12 @@ def create_presentation():
     p_r1.text = "✨ The CineVerse Solution"
     p_r1.font.size = Pt(20)
     p_r1.font.bold = True
-    p_r1.font.color.rgb = ACCENT_BLUE
+    p_r1.font.color.rgb = ACCENT_GOLD
 
     points_r = [
-        "Unified Full-Stack Application: Seamless communication between React frontend and Node/Express backend.",
-        "Persistent MongoDB Data Layer: Schema-validated documents supporting relational virtuals for movies, reviews, and users.",
-        "Real-Time Movie Discovery: Instant multi-attribute search, genre filtering, dynamic sorting, and watchlist favorites.",
+        "Unified Full-Stack Application: Seamless communication between modern React frontend and Node/Express backend.",
+        "Persistent MongoDB Data Layer: Live cloud Atlas cluster hosting 36+ curated blockbuster and award-winning titles.",
+        "Real-Time Movie Discovery: High-performance debounced search, genre pill tabs, dynamic sorting, and watchlist favorites.",
         "Interactive Community Features: User authentication (JWT), 5-star rating reviews, and an analytics dashboard with real-time aggregations."
     ]
     for pt in points_r:
@@ -183,12 +176,12 @@ def create_presentation():
     add_header(s3, "Project Objectives & Scope", "03 / 10 | Goals & Milestones")
 
     objectives = [
-        ("Full-Stack MERN Architecture", "Develop a production-grade web application strictly adhering to MongoDB, Express.js, React.js, and Node.js standards.", ACCENT_BLUE),
-        ("Complete CRUD Implementation", "Provide full Create, Read, Update, and Delete operations for movies, genres, and community reviews with optimistic UI feedback.", ACCENT_PURPLE),
-        ("Secure Authentication & RBAC", "Implement stateless JWT-based authentication with bcrypt password hashing and Role-Based Access Control (Admin vs. Standard User).", ACCENT_GOLD),
-        ("Responsive & Modern UI/UX", "Deliver a dark cinema aesthetic featuring responsive grid cards, modal dialogs, toast notifications, and interactive analytics.", ACCENT_RED),
-        ("Zero-Config Resilience", "Support automated database seeding, MongoDB Atlas cloud connectivity, and graceful in-memory fallbacks.", ACCENT_BLUE),
-        ("Deployment & DevOps Readiness", "Package application for automated builds on Render, Vercel, and Docker with comprehensive documentation.", ACCENT_PURPLE)
+        ("Full-Stack MERN Architecture", "Develop a production-grade web application strictly adhering to MongoDB, Express.js, React.js, and Node.js standards.", ACCENT_WHITE),
+        ("Complete CRUD Implementation", "Provide full Create, Read, Update, and Delete operations for movies, genres, and community reviews with optimistic UI feedback.", ACCENT_GOLD),
+        ("Secure Authentication & RBAC", "Implement stateless JWT-based authentication with bcrypt password hashing and Role-Based Access Control.", ACCENT_WHITE),
+        ("Clean Cinema Aesthetics", "Deliver an uncluttered matte-black UI featuring responsive cards, modal dialogs, toast notifications, and analytics.", ACCENT_GOLD),
+        ("Cloud Database Connectivity", "Connect to live MongoDB Atlas cloud cluster with robust DNS resilience and automated seeding.", ACCENT_WHITE),
+        ("Deployment & DevOps Readiness", "Package application for automated builds on Render, Vercel, and Docker with comprehensive documentation.", ACCENT_GOLD)
     ]
 
     for i, (title, desc, color) in enumerate(objectives):
@@ -200,7 +193,7 @@ def create_presentation():
         card = s3.shapes.add_shape(MSO_SHAPE.ROUNDED_RECTANGLE, left, top, Inches(3.75), Inches(2.2))
         card.fill.solid()
         card.fill.fore_color.rgb = CARD_BG
-        card.line.color.rgb = color
+        card.line.color.rgb = BORDER_COLOR
 
         tb = s3.shapes.add_textbox(left + Inches(0.2), top + Inches(0.2), Inches(3.35), Inches(1.8))
         tf = tb.text_frame
@@ -225,29 +218,29 @@ def create_presentation():
 
     tech_cards = [
         ("MongoDB & Mongoose", "Database Layer", [
-            "NoSQL document database for flexible movie schemas",
+            "MongoDB Atlas cloud cluster with multi-shard replica set",
             "Mongoose ODM with schema validations & virtual populate",
             "Aggregation pipelines for real-time dashboard analytics",
-            "Indexed fields for high-performance title & genre queries"
+            "36+ curated movies pre-seeded with ratings and artwork"
         ], ACCENT_GOLD),
         ("Express.js & Node.js", "Backend REST API", [
             "Node.js v24 runtime with asynchronous event loop",
             "Express.js modular router with clean MVC architecture",
             "JSON Web Token (JWT) & bcrypt for secure auth",
             "Centralized error handling & CORS configuration"
-        ], ACCENT_BLUE),
+        ], ACCENT_WHITE),
         ("React.js & Vite", "Frontend Client", [
             "React 18 Single Page Application (SPA)",
-            "Vite 5 for instantaneous HMR & optimized production bundling",
+            "Vite 5 for instantaneous HMR & optimized 2.3s production build",
             "React Router v6 for declarative client-side routing",
             "Custom context hooks for Auth & Toast notifications"
-        ], ACCENT_PURPLE),
+        ], ACCENT_GOLD),
         ("DevOps & Utilities", "Tooling & Deployment", [
             "Axios with HTTP interceptors for automatic Bearer tokens",
             "Lucide React for sleek, scalable SVG cinema icons",
             "Git & GitHub for collaborative version control",
             "Render & Vercel cloud platforms for public deployment"
-        ], ACCENT_RED),
+        ], ACCENT_WHITE),
     ]
 
     for i, (title, subtitle, bullets, color) in enumerate(tech_cards):
@@ -255,7 +248,7 @@ def create_presentation():
         card = s4.shapes.add_shape(MSO_SHAPE.ROUNDED_RECTANGLE, left, Inches(1.8), Inches(2.8), Inches(4.8))
         card.fill.solid()
         card.fill.fore_color.rgb = CARD_BG
-        card.line.color.rgb = color
+        card.line.color.rgb = BORDER_COLOR
 
         tb = s4.shapes.add_textbox(left + Inches(0.2), Inches(2.0), Inches(2.4), Inches(4.3))
         tf = tb.text_frame
@@ -288,18 +281,17 @@ def create_presentation():
     add_slide_background(s5)
     add_header(s5, "System Architecture & Workflow", "05 / 10 | Architectural Design")
 
-    # Flowchart layers
     layers = [
-        ("1. Presentation Tier (Client)", "React.js + Vite (Port 5173)\n• Component Hierarchy (Navbar, Catalog, Details, Dashboard, Modals)\n• React Router v6 & Client Contexts (AuthContext, ToastContext)\n• Axios Interceptor transmitting Bearer JWT Tokens", ACCENT_PURPLE, Inches(1.8)),
-        ("2. API & Routing Tier (Controller / Middleware)", "Express.js + Node.js (Port 5000)\n• Global CORS, JSON parser, Morgan logger, and Centralized Error Middleware\n• Auth Middleware (JWT Token Verification & Role Verification)\n• Resource Routes (/api/movies, /api/auth, /api/reviews, /api/stats)", ACCENT_BLUE, Inches(3.4)),
-        ("3. Persistence Tier (Data / Cloud)", "MongoDB & Mongoose ODM\n• Movie Collection (Catalogs, metadata, favourites, director, duration)\n• Review Collection (Indexed compound keys, 1-5 star ratings)\n• User Collection (Bcrypt hashed credentials, role designations)\n• Aggregation Engine for Real-Time Analytics", ACCENT_GOLD, Inches(5.0))
+        ("1. Presentation Tier (Client)", "React.js + Vite (Port 5173)\n• Sleek matte-black UI with debounced search and genre pill tabs\n• React Router v6 & Client Contexts (AuthContext, ToastContext)\n• Axios Interceptor transmitting Bearer JWT Tokens", ACCENT_WHITE, Inches(1.8)),
+        ("2. API & Routing Tier (Controller / Middleware)", "Express.js + Node.js (Port 5000)\n• Global CORS, JSON parser, Morgan logger, and Centralized Error Middleware\n• Auth Middleware (JWT Token Verification & Role Verification)\n• Resource Routes (/api/movies, /api/auth, /api/reviews, /api/stats)", ACCENT_GOLD, Inches(3.4)),
+        ("3. Persistence Tier (Data / Cloud)", "MongoDB Atlas Cloud Cluster\n• Movie Collection (36+ titles, metadata, favourites, director, duration)\n• Review Collection (Indexed compound keys, 1-5 star ratings)\n• User Collection (Bcrypt hashed credentials, role designations)\n• Aggregation Engine for Real-Time Analytics", ACCENT_WHITE, Inches(5.0))
     ]
 
     for title, desc, color, top in layers:
         card = s5.shapes.add_shape(MSO_SHAPE.ROUNDED_RECTANGLE, Inches(0.8), top, Inches(11.733), Inches(1.35))
         card.fill.solid()
         card.fill.fore_color.rgb = CARD_BG
-        card.line.color.rgb = color
+        card.line.color.rgb = BORDER_COLOR
 
         tb = s5.shapes.add_textbox(Inches(1.1), top + Inches(0.12), Inches(11.1), Inches(1.1))
         tf = tb.text_frame
@@ -324,12 +316,12 @@ def create_presentation():
     add_header(s6, "Features & Functionalities", "06 / 10 | Application Capabilities")
 
     features = [
-        ("🎬 Full Movie Catalog & CRUD", "Create, Read, Update, and Delete movies with modal form inputs, genre selection, release year, rating, and poster preview."),
-        ("🔍 Real-Time Search & Filtering", "Dynamic multi-attribute search across title, genre, and synopsis with zero lag, plus genre filters and sorting options."),
+        ("🎬 Sizable 36+ Movie Catalog", "Pre-loaded with critically acclaimed films spanning Sci-Fi, Drama, Action, Animation, and International Cinema with HD artwork."),
+        ("⚡ High-Speed Debounced Search", "Smooth 250ms debounced search preventing server lag, with instant genre pills and dynamic sorting."),
         ("❤️ Interactive Favourites / Watchlist", "One-click heart toggle on cards and details view with optimistic UI updates and instant database synchronization."),
         ("⭐ Community Reviews & Ratings", "Audience review system with 1-5 star ratings, feedback commentary, timestamp logging, and author deletion rights."),
-        ("📊 Analytics Dashboard", "Visual breakdown of catalog metrics: total movies, average rating, genre distributions, language breakdown, and top-rated leaderboard."),
-        ("🔐 Secure User Authentication", "JWT stateless token auth, bcrypt password hashing, login/register forms with built-in demo credentials autofill.")
+        ("📊 Clean Analytics Dashboard", "Visual breakdown of catalog metrics: total movies, average rating, genre distributions, and highest-rated leaderboard."),
+        ("🔐 Secure User Authentication", "JWT stateless token auth, bcrypt password hashing, login/register forms with built-in test accounts.")
     ]
 
     for i, (f_title, f_desc) in enumerate(features):
@@ -341,7 +333,7 @@ def create_presentation():
         card = s6.shapes.add_shape(MSO_SHAPE.ROUNDED_RECTANGLE, left, top, Inches(5.75), Inches(1.45))
         card.fill.solid()
         card.fill.fore_color.rgb = CARD_BG
-        card.line.color.rgb = ACCENT_BLUE
+        card.line.color.rgb = BORDER_COLOR
 
         tb = s6.shapes.add_textbox(left + Inches(0.2), top + Inches(0.15), Inches(5.35), Inches(1.2))
         tf = tb.text_frame
@@ -365,11 +357,10 @@ def create_presentation():
     add_slide_background(s7)
     add_header(s7, "Database Design & REST API Integration", "07 / 10 | Data Architecture")
 
-    # Left: Database Schema
     c_s7_left = s7.shapes.add_shape(MSO_SHAPE.ROUNDED_RECTANGLE, Inches(0.8), Inches(1.8), Inches(5.6), Inches(4.8))
     c_s7_left.fill.solid()
     c_s7_left.fill.fore_color.rgb = CARD_BG
-    c_s7_left.line.color.rgb = ACCENT_GOLD
+    c_s7_left.line.color.rgb = BORDER_COLOR
 
     tb_s7_l = s7.shapes.add_textbox(Inches(1.1), Inches(2.0), Inches(5.0), Inches(4.3))
     tf_s7_l = tb_s7_l.text_frame
@@ -382,7 +373,7 @@ def create_presentation():
     p.font.color.rgb = ACCENT_GOLD
 
     schemas = [
-        "Movie Schema: title (String*), genre (String*), releaseYear (Number*), rating (Number 0-10), duration (Number), poster (URL), description (String), isFavourite (Boolean), createdBy (Ref User).",
+        "Movie Schema: title (String*), genre (String*), releaseYear (Number*), rating (Number 0-10), duration (Number), poster (URL), description (String), isFavourite (Boolean), director (String), createdBy (Ref User).",
         "User Schema: name (String*), email (Unique, lowercase*), password (Bcrypt hashed*), role (user | admin), timestamps.",
         "Review Schema: movie (Ref Movie*), user (Ref User*), userName (String), rating (Number 1-5), comment (String), compound index on (movie, user)."
     ]
@@ -393,11 +384,10 @@ def create_presentation():
         ps.font.color.rgb = TEXT_MUTED
         ps.space_after = Pt(8)
 
-    # Right: REST API Endpoints
     c_s7_right = s7.shapes.add_shape(MSO_SHAPE.ROUNDED_RECTANGLE, Inches(6.8), Inches(1.8), Inches(5.7), Inches(4.8))
     c_s7_right.fill.solid()
     c_s7_right.fill.fore_color.rgb = CARD_BG
-    c_s7_right.line.color.rgb = ACCENT_PURPLE
+    c_s7_right.line.color.rgb = BORDER_COLOR
 
     tb_s7_r = s7.shapes.add_textbox(Inches(7.1), Inches(2.0), Inches(5.1), Inches(4.3))
     tf_s7_r = tb_s7_r.text_frame
@@ -407,7 +397,7 @@ def create_presentation():
     p.text = "🌐 REST API Endpoints"
     p.font.size = Pt(17)
     p.font.bold = True
-    p.font.color.rgb = ACCENT_PURPLE
+    p.font.color.rgb = ACCENT_WHITE
 
     endpoints = [
         "GET /api/movies - List movies (Search, Genre, Favourites, Sort)",
@@ -435,10 +425,10 @@ def create_presentation():
     add_header(s8, "Screenshots & Application UI Walkthrough", "08 / 10 | User Interface")
 
     ui_views = [
-        ("Home Movie Catalog", "Dark-themed cinema grid showcasing movie posters, IMDb ratings, genre tags, quick favourite toggles, real-time live search, and sorting controls."),
-        ("Movie Details & Reviews", "Cinematic hero banner displaying high-res poster, synopsis, director metadata, edit/delete actions, and dynamic audience review submission form."),
+        ("Featured Movie Catalog", "Sleek carbon-black grid showcasing high-res movie posters, IMDb ratings, genre tags, quick favourite toggles, live search, and genre pills."),
+        ("Movie Details & Reviews", "Cinematic hero banner displaying poster, synopsis, director metadata, duration, edit/delete actions, and dynamic audience review submission."),
         ("Add & Edit Modal Dialog", "Clean modal overlay with comprehensive form fields, input validation alerts, real-time poster URL preview, and duration calculation."),
-        ("Analytics & Metrics Dashboard", "Interactive visual statistics displaying catalog volume, average ratings, genre distribution percentage bars, and top-rated leaderboard.")
+        ("Analytics & Metrics Dashboard", "Interactive statistics displaying catalog volume, average ratings, genre distribution percentage bars, and top-rated leaderboard.")
     ]
 
     for i, (v_title, v_desc) in enumerate(ui_views):
@@ -450,7 +440,7 @@ def create_presentation():
         card = s8.shapes.add_shape(MSO_SHAPE.ROUNDED_RECTANGLE, left, top, Inches(5.75), Inches(2.2))
         card.fill.solid()
         card.fill.fore_color.rgb = CARD_BG
-        card.line.color.rgb = ACCENT_BLUE
+        card.line.color.rgb = BORDER_COLOR
 
         tb = s8.shapes.add_textbox(left + Inches(0.2), top + Inches(0.2), Inches(5.35), Inches(1.8))
         tf = tb.text_frame
@@ -460,7 +450,7 @@ def create_presentation():
         pt.text = f"🖥️ {v_title}"
         pt.font.size = Pt(16)
         pt.font.bold = True
-        pt.font.color.rgb = ACCENT_BLUE
+        pt.font.color.rgb = ACCENT_GOLD
 
         pd = tf.add_paragraph()
         pd.text = v_desc
@@ -474,11 +464,10 @@ def create_presentation():
     add_slide_background(s9)
     add_header(s9, "Challenges Faced & Future Scope", "09 / 10 | Reflection & Roadmap")
 
-    # Left: Challenges & Solutions
     c_s9_l = s9.shapes.add_shape(MSO_SHAPE.ROUNDED_RECTANGLE, Inches(0.8), Inches(1.8), Inches(5.6), Inches(4.8))
     c_s9_l.fill.solid()
     c_s9_l.fill.fore_color.rgb = CARD_BG
-    c_s9_l.line.color.rgb = ACCENT_RED
+    c_s9_l.line.color.rgb = BORDER_COLOR
 
     tb_s9_l = s9.shapes.add_textbox(Inches(1.1), Inches(2.0), Inches(5.0), Inches(4.3))
     tf_s9_l = tb_s9_l.text_frame
@@ -488,12 +477,12 @@ def create_presentation():
     p.text = "⚡ Key Challenges & Solutions"
     p.font.size = Pt(18)
     p.font.bold = True
-    p.font.color.rgb = ACCENT_RED
+    p.font.color.rgb = ACCENT_GOLD
 
     challenges = [
-        ("Asynchronous State & Optimistic UI", "Challenge: Lag when liking movies.\nSolution: Implemented optimistic client state updates with rollback on API failure."),
-        ("Database Portability", "Challenge: Lack of local MongoDB daemon on developer machines.\nSolution: Configured in-memory Mongo fallback with automatic database seeding."),
-        ("Virtual Relations & Cascade Deletion", "Challenge: Orphaned reviews upon deleting movies.\nSolution: Added Mongoose middleware to clean up related reviews automatically.")
+        ("DNS Resolution on Windows/ISPs", "Challenge: Node querySrv failed on local router DNS.\nSolution: Injected Google/Cloudflare DNS fallbacks into the database connector."),
+        ("Search Input Performance", "Challenge: Un-throttled keystrokes caused redundant API requests.\nSolution: Implemented a 250ms debounce layer in React."),
+        ("Optimistic State & Rollback", "Challenge: Perceived UI lag during watchlist toggling.\nSolution: Applied optimistic UI updates with automatic rollback on error.")
     ]
     for c_title, c_sol in challenges:
         pc = tf_s9_l.add_paragraph()
@@ -507,11 +496,10 @@ def create_presentation():
         ps.font.color.rgb = TEXT_MUTED
         ps.space_after = Pt(6)
 
-    # Right: Future Scope
     c_s9_r = s9.shapes.add_shape(MSO_SHAPE.ROUNDED_RECTANGLE, Inches(6.8), Inches(1.8), Inches(5.7), Inches(4.8))
     c_s9_r.fill.solid()
     c_s9_r.fill.fore_color.rgb = CARD_BG
-    c_s9_r.line.color.rgb = ACCENT_PURPLE
+    c_s9_r.line.color.rgb = BORDER_COLOR
 
     tb_s9_r = s9.shapes.add_textbox(Inches(7.1), Inches(2.0), Inches(5.1), Inches(4.3))
     tf_s9_r = tb_s9_r.text_frame
@@ -521,7 +509,7 @@ def create_presentation():
     p.text = "🚀 Future Enhancements"
     p.font.size = Pt(18)
     p.font.bold = True
-    p.font.color.rgb = ACCENT_PURPLE
+    p.font.color.rgb = ACCENT_WHITE
 
     future_items = [
         "AI Recommendation Engine: Integration with Gemini API to offer personalized movie suggestions based on watch history.",
@@ -546,7 +534,7 @@ def create_presentation():
     c_concl = s10.shapes.add_shape(MSO_SHAPE.ROUNDED_RECTANGLE, Inches(0.8), Inches(1.8), Inches(11.733), Inches(4.8))
     c_concl.fill.solid()
     c_concl.fill.fore_color.rgb = CARD_BG
-    c_concl.line.color.rgb = ACCENT_GOLD
+    c_concl.line.color.rgb = BORDER_COLOR
 
     tb_concl = s10.shapes.add_textbox(Inches(1.2), Inches(2.1), Inches(11.0), Inches(4.2))
     tf_c = tb_concl.text_frame
@@ -560,9 +548,9 @@ def create_presentation():
     p.space_after = Pt(14)
 
     concl_points = [
-        "Successfully transformed the initial prototype into an enterprise-grade, fully functional MERN stack web application.",
-        "Delivered end-to-end integration across MongoDB, Express.js, React.js, and Node.js with complete CRUD capabilities.",
-        "Enhanced user experience with dark cinema aesthetics, real-time filtering, responsive cards, toast notifications, and analytics.",
+        "Successfully engineered an enterprise-grade, fully functional MERN stack web application with 36+ pre-seeded movies.",
+        "Delivered end-to-end integration across MongoDB Atlas, Express.js, React.js, and Node.js with complete CRUD capabilities.",
+        "Delivered a clean, minimalist matte-black cinema UI with debounced search, responsive genre pills, and instant watchlist toggles.",
         "Implemented secure JWT authentication, user reviews, role authorization, and robust error-handling middleware.",
         "All requirements of the MERN Stack Training Program—including source code, documentation, presentation, and deployment readiness—have been fulfilled."
     ]
@@ -578,9 +566,8 @@ def create_presentation():
     thank_p.text = "\nThank you! Questions and feedback are welcome."
     thank_p.font.size = Pt(15)
     thank_p.font.bold = True
-    thank_p.font.color.rgb = ACCENT_BLUE
+    thank_p.font.color.rgb = ACCENT_GOLD
 
-    # Ensure presentation directory exists
     os.makedirs('presentation', exist_ok=True)
     out_path = os.path.join('presentation', 'CineVerse_MERN_Project_Presentation.pptx')
     prs.save(out_path)
@@ -588,4 +575,3 @@ def create_presentation():
 
 if __name__ == '__main__':
     create_presentation()
-

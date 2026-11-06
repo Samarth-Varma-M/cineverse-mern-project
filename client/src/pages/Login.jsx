@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { LogIn, Mail, Lock, Sparkles, AlertCircle } from 'lucide-react';
+import { LogIn, Sparkles, AlertCircle } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 import { useToast } from '../context/ToastContext';
 
@@ -21,7 +21,7 @@ export const Login = () => {
 
     try {
       await login(email, password);
-      toast.success('Welcome back to CineVerse! 🍿');
+      toast.success('Signed in successfully');
       navigate('/');
     } catch (err) {
       setError(err.message);
@@ -41,54 +41,54 @@ export const Login = () => {
   };
 
   return (
-    <div className="container" style={{ minHeight: '80vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+    <div className="container" style={{ minHeight: '75vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
       <div style={{
         background: 'var(--bg-secondary)',
         border: '1px solid var(--border-color)',
         borderRadius: 'var(--radius-lg)',
-        padding: '36px',
+        padding: '32px',
         width: '100%',
-        maxWidth: '440px',
-        boxShadow: 'var(--shadow-lg)'
+        maxWidth: '400px',
+        boxShadow: 'var(--shadow-md)'
       }}>
-        <div style={{ textAlign: 'center', marginBottom: '28px' }}>
+        <div style={{ textAlign: 'center', marginBottom: '24px' }}>
           <div style={{
             display: 'inline-flex',
-            padding: '12px',
-            background: 'var(--accent-glow)',
-            color: 'var(--accent-primary)',
-            borderRadius: 'var(--radius-md)',
-            marginBottom: '12px'
+            padding: '10px',
+            background: 'rgba(255, 255, 255, 0.08)',
+            color: '#f59e0b',
+            borderRadius: 'var(--radius-sm)',
+            marginBottom: '10px'
           }}>
-            <LogIn size={26} />
+            <LogIn size={22} />
           </div>
-          <h1 style={{ fontSize: '1.8rem', marginBottom: '6px' }}>Sign In</h1>
-          <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem' }}>
-            Access your CineVerse watchlist and review privileges.
+          <h1 style={{ fontSize: '1.6rem', marginBottom: '4px' }}>Sign In</h1>
+          <p style={{ color: 'var(--text-secondary)', fontSize: '0.85rem' }}>
+            Access your personal watchlist and movie reviews.
           </p>
         </div>
 
         {error && (
           <div style={{
-            background: 'rgba(244, 63, 94, 0.15)',
-            border: '1px solid rgba(244, 63, 94, 0.4)',
-            color: '#fda4af',
-            padding: '10px 14px',
+            background: 'rgba(239, 68, 68, 0.12)',
+            border: '1px solid rgba(239, 68, 68, 0.3)',
+            color: '#fca5a5',
+            padding: '8px 12px',
             borderRadius: 'var(--radius-sm)',
-            marginBottom: '20px',
+            marginBottom: '16px',
             display: 'flex',
             alignItems: 'center',
             gap: '8px',
-            fontSize: '0.9rem'
+            fontSize: '0.85rem'
           }}>
-            <AlertCircle size={18} />
+            <AlertCircle size={16} />
             <span>{error}</span>
           </div>
         )}
 
         <form onSubmit={handleSubmit}>
           <div className="form-group">
-            <label className="form-label">Email Address</label>
+            <label className="form-label">Email</label>
             <input
               type="email"
               className="form-input"
@@ -114,31 +114,31 @@ export const Login = () => {
           <button
             type="submit"
             className="btn btn-primary"
-            style={{ width: '100%', marginTop: '8px' }}
+            style={{ width: '100%', marginTop: '6px' }}
             disabled={submitting}
           >
-            <span>{submitting ? 'Authenticating...' : 'Sign In'}</span>
+            <span>{submitting ? 'Signing in...' : 'Sign In'}</span>
           </button>
         </form>
 
         {/* Demo Credentials Helper */}
         <div style={{
-          marginTop: '24px',
-          padding: '16px',
+          marginTop: '20px',
+          padding: '12px',
           background: 'var(--bg-card)',
           borderRadius: 'var(--radius-sm)',
           border: '1px solid var(--border-color)',
-          fontSize: '0.825rem',
+          fontSize: '0.8rem',
         }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontWeight: 600, color: '#a5b4fc', marginBottom: '8px' }}>
-            <Sparkles size={14} />
-            <span>Quick Demo Credentials</span>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontWeight: 600, color: 'var(--text-secondary)', marginBottom: '8px' }}>
+            <Sparkles size={13} color="#f59e0b" />
+            <span>Quick Test Accounts</span>
           </div>
           <div style={{ display: 'flex', gap: '8px' }}>
             <button
               type="button"
               className="btn btn-secondary btn-sm"
-              style={{ flex: 1, fontSize: '0.78rem' }}
+              style={{ flex: 1, fontSize: '0.75rem' }}
               onClick={() => handleUseDemo('admin')}
             >
               Fill Admin
@@ -146,17 +146,17 @@ export const Login = () => {
             <button
               type="button"
               className="btn btn-secondary btn-sm"
-              style={{ flex: 1, fontSize: '0.78rem' }}
+              style={{ flex: 1, fontSize: '0.75rem' }}
               onClick={() => handleUseDemo('student')}
             >
-              Fill Student
+              Fill Member
             </button>
           </div>
         </div>
 
-        <p style={{ textAlign: 'center', marginTop: '20px', color: 'var(--text-secondary)', fontSize: '0.875rem' }}>
+        <p style={{ textAlign: 'center', marginTop: '18px', color: 'var(--text-secondary)', fontSize: '0.825rem' }}>
           Don't have an account?{' '}
-          <Link to="/register" style={{ color: 'var(--accent-primary)', fontWeight: 600 }}>
+          <Link to="/register" style={{ color: '#ffffff', fontWeight: 600, textDecoration: 'underline' }}>
             Sign Up
           </Link>
         </p>
@@ -164,4 +164,3 @@ export const Login = () => {
     </div>
   );
 };
-

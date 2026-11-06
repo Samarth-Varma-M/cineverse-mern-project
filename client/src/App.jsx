@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import { Navbar } from './components/Navbar';
 import { Catalog } from './pages/Catalog';
 import { MovieDetails } from './pages/MovieDetails';
@@ -9,7 +9,7 @@ import { Register } from './pages/Register';
 import { NotFound } from './pages/NotFound';
 import { AuthProvider } from './context/AuthContext';
 import { ToastProvider } from './context/ToastContext';
-import { Film, Github, Heart } from 'lucide-react';
+import { Film } from 'lucide-react';
 
 export default function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -48,14 +48,14 @@ export default function App() {
               </Routes>
             </main>
 
-            {/* Footer */}
+            {/* Clean Consumer Footer */}
             <footer style={{
               background: 'var(--bg-secondary)',
               borderTop: '1px solid var(--border-color)',
-              padding: '36px 0 24px',
-              marginTop: '60px',
-              fontSize: '0.875rem',
-              color: 'var(--text-secondary)'
+              padding: '28px 0 24px',
+              marginTop: '48px',
+              fontSize: '0.825rem',
+              color: 'var(--text-muted)'
             }}>
               <div className="container" style={{
                 display: 'flex',
@@ -65,30 +65,18 @@ export default function App() {
                 gap: '16px'
               }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                  <Film size={18} color="var(--accent-primary)" />
-                  <span style={{ fontWeight: 700, color: 'var(--text-primary)' }}>CineVerse</span>
-                  <span>— MERN Stack Web Development Training Project</span>
+                  <Film size={16} color="#f59e0b" />
+                  <span style={{ fontWeight: 800, color: '#ffffff', letterSpacing: '0.5px' }}>
+                    CINE<span style={{ color: '#f59e0b' }}>VERSE</span>
+                  </span>
+                  <span style={{ margin: '0 4px' }}>•</span>
+                  <span>Discover, track, and review great cinema worldwide.</span>
                 </div>
 
-                <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-                  <span>Developed with</span>
-                  <Heart size={14} fill="#ef4444" color="#ef4444" />
-                  <span>by CineVerse Team</span>
-                </div>
-
-                <div style={{ display: 'flex', gap: '16px' }}>
-                  <span style={{ background: 'var(--bg-card)', padding: '3px 8px', borderRadius: '4px', fontSize: '0.75rem' }}>
-                    MongoDB
-                  </span>
-                  <span style={{ background: 'var(--bg-card)', padding: '3px 8px', borderRadius: '4px', fontSize: '0.75rem' }}>
-                    Express.js
-                  </span>
-                  <span style={{ background: 'var(--bg-card)', padding: '3px 8px', borderRadius: '4px', fontSize: '0.75rem' }}>
-                    React.js
-                  </span>
-                  <span style={{ background: 'var(--bg-card)', padding: '3px 8px', borderRadius: '4px', fontSize: '0.75rem' }}>
-                    Node.js
-                  </span>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+                  <Link to="/" style={{ color: 'var(--text-secondary)' }}>Catalog</Link>
+                  <Link to="/dashboard" style={{ color: 'var(--text-secondary)' }}>Analytics</Link>
+                  <span>© 2026 CineVerse</span>
                 </div>
               </div>
             </footer>
@@ -98,4 +86,3 @@ export default function App() {
     </Router>
   );
 }
-
