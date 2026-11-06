@@ -13,7 +13,7 @@
 
 ## 👥 Team Details & Contribution
 
-- **Team Name:** `DevDynamos`
+- **Team Name:** `Developers`
 - **Project Title:** `CineVerse: Full-Stack Movie Management & Discovery Platform`
 
 | # | Member Name | Registration Number | Core Role & Responsibilities |
@@ -154,32 +154,5 @@ npm run dev
 - **Backend API:** [http://localhost:5000/api](http://localhost:5000/api)
 
 ---
-
-## 🌐 Deployment Guide (Render & Vercel)
-
-### Step 1: Deploy Backend to Render.com
-1. Create a free account at [Render.com](https://render.com) and link your GitHub repository.
-2. Click **New +** -> **Web Service**.
-3. Settings:
-   - **Root Directory:** `server`
-   - **Build Command:** `npm install`
-   - **Start Command:** `node src/server.js`
-4. Add Environment Variables:
-   - `NODE_ENV`: `production`
-   - `PORT`: `5000`
-   - `MONGO_URI`: *Your MongoDB Atlas connection URI*
-   - `JWT_SECRET`: *Any secure secret string*
-   - `CLIENT_URL`: *Your deployed Vercel frontend URL*
-5. Click **Create Web Service** and copy your backend URL (e.g. `https://cineverse-api.onrender.com`).
-
-### Step 2: Deploy Frontend to Vercel.com
-1. Create a free account at [Vercel.com](https://vercel.com) and import your GitHub repository.
-2. Settings:
-   - **Root Directory:** `client`
-   - **Build Command:** `npm run build`
-   - **Output Directory:** `dist`
-3. Add Environment Variable:
-   - `VITE_API_URL`: *Your Render backend URL from Step 1*
-4. Click **Deploy**.
 
 **Deployment Link**: **
