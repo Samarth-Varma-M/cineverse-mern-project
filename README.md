@@ -155,4 +155,4 @@ npm run dev
 
 ---
 
-**Deployment Link**: **
+**Deployment Link**: *https://cineverse-mern-project.vercel.app/*
