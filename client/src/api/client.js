@@ -1,9 +1,19 @@
 import axios from 'axios';
 
-const API_BASE = import.meta.env.VITE_API_URL || '';
+// Get API base URL and sanitize it to prevent double slashes
+let rawBase = import.meta.env.VITE_API_URL ? import.meta.env.VITE_API_URL.trim() : '';
+
+// Strip trailing slashes
+rawBase = rawBase.replace(/\/+$/, '');
+
+// If user already included /api at the end, strip it so we don't duplicate
+rawBase = rawBase.replace(/\/api$/, '');
+
+// Final clean base URL
+const baseURL = rawBase ? `${rawBase}/api` : '/api';
 
 export const api = axios.create({
-  baseURL: `${API_BASE}/api`,
+  baseURL,
   headers: {
     'Content-Type': 'application/json',
   },
@@ -32,4 +42,3 @@ api.interceptors.response.use(
 );
 
 export default api;
-
