@@ -1,7 +1,11 @@
 import axios from 'axios';
 
-// Get API base URL and sanitize it to prevent double slashes
-let rawBase = import.meta.env.VITE_API_URL ? import.meta.env.VITE_API_URL.trim() : '';
+// Default production backend on Render
+const DEFAULT_API_HOST = 'https://cineverse-mern-project.onrender.com';
+
+let rawBase = import.meta.env.VITE_API_URL
+  ? import.meta.env.VITE_API_URL.trim()
+  : (import.meta.env.DEV ? '' : DEFAULT_API_HOST);
 
 // Strip trailing slashes
 rawBase = rawBase.replace(/\/+$/, '');
