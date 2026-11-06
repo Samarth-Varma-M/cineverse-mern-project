@@ -192,7 +192,7 @@ npm run dev
 | **2** | **Project Title** | `CineVerse: Full-Stack Movie Discovery & Management Platform` |
 | **3** | **Names of All 3 Team Members** | 1. Samar (Lead)<br>2. Alex Rivera<br>3. Priyansh Sharma |
 | **4** | **Registration Numbers** | 1. `2024BCSE001`<br>2. `2024BCSE002`<br>3. `2024BCSE003` |
-| **5** | **GitHub Repository Link** | *Add your public repository link after pushing* |
+| **5** | **GitHub Repository Link** | `https://github.com/Samarth-Varma-M/cineverse-mern-project` |
 | **6** | **Deployed Project Link** | *Add your live Vercel/Render link after deploying* |
 
 ---
