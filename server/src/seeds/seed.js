@@ -1,3 +1,13 @@
+const dns = require('dns');
+
+// Fix for Windows / ISP SRV DNS resolution with MongoDB Atlas
+try {
+  dns.setServers(['8.8.8.8', '8.8.4.4', '1.1.1.1']);
+} catch (e) {
+  // Ignore
+}
+
+const path = require('path');
 const mongoose = require('mongoose');
 const Movie = require('../models/Movie');
 const User = require('../models/User');
@@ -73,14 +83,20 @@ const seedDataIfNeeded = async () => {
   }
 };
 
-// If run directly from terminal: node src/seeds/seed.js
+// If run directly from terminal: npm run seed
 if (require.main === module) {
-  require('dotenv').config();
-  const uri = process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/cineverse';
+  require('dotenv').config({ path: path.join(__dirname, '../../.env') });
+  let uri = process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/cineverse';
 
+  if (uri.includes('mongodb.net/') && !uri.includes('mongodb.net/cineverse')) {
+    uri = uri.replace('mongodb.net/', 'mongodb.net/cineverse');
+  }
+
+  console.log('Connecting to MongoDB Atlas to seed data...');
   mongoose
     .connect(uri)
     .then(async () => {
+      console.log('✅ Connected successfully!');
       await seedData();
       process.exit(0);
     })

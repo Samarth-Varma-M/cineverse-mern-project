@@ -265,3 +265,4 @@ export const MovieModal = ({ isOpen, onClose, onSave, movie }) => {
     </div>
   );
 };
+

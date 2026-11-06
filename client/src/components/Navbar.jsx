@@ -111,3 +111,4 @@ export const Navbar = ({ onOpenAddModal }) => {
     </header>
   );
 };
+

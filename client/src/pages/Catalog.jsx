@@ -263,3 +263,4 @@ export const Catalog = ({ isModalOpen, setIsModalOpen, editingMovie, setEditingM
     </div>
   );
 };
+

@@ -32,3 +32,4 @@ Presentation: Included in /presentation/CineVerse_MERN_Project_Presentation.pptx
 ```
 
 > **Note for the team:** Update the placeholders (`your-username` and `vercel.app`) with your actual GitHub username and live Vercel/Render URL upon creating the repository and deploying.
+

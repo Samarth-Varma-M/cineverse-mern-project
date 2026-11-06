@@ -403,3 +403,4 @@ export const MovieDetails = () => {
     </div>
   );
 };
+

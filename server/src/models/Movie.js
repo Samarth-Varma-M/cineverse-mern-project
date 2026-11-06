@@ -78,3 +78,4 @@ movieSchema.virtual('reviews', {
 });
 
 module.exports = mongoose.model('Movie', movieSchema);
+

@@ -79,3 +79,4 @@ export const MovieCard = ({ movie, onToggleFav, onEdit, onDelete }) => {
     </div>
   );
 };
+
