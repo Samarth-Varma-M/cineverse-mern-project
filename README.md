@@ -18,9 +18,9 @@
 
 | # | Member Name | Registration Number | Core Role & Responsibilities |
 |:-:|:---|:---:|:---|
-| **1** | **Samar** *(Lead)* | `2024BCSE001` | System Architecture, Full-Stack Integration, Database Seeding & DevOps |
-| **2** | **Alex Rivera** | `2024BCSE002` | Frontend Development (React 18, Vite, Matte-Black UI, State Management) |
-| **3** | **Priyansh Sharma** | `2024BCSE003` | Backend REST API (Express, Mongoose Models, JWT Auth, Reviews, Stats) |
+| **1** | **Samarth Varma Mandapati** | `241FA04F69` | System Architecture, Full-Stack Integration, Database Seeding & DevOps |
+| **2** | **Swarna Abhinay** | `241FA04696` | Frontend Development (React 18, Vite, Matte-Black UI, State Management) |
+| **3** | **Devarapalli Tharun** | `241FA04470` | Backend REST API (Express, Mongoose Models, JWT Auth, Reviews, Stats) |
 
 ---
 
@@ -182,31 +182,4 @@ npm run dev
    - `VITE_API_URL`: *Your Render backend URL from Step 1*
 4. Click **Deploy**.
 
----
-
-## 📋 Spreadsheet Submission Details
-
-| Field # | Item | Submitted Value |
-|:---:|:---|:---|
-| **1** | **Team Name** | `DevDynamos` |
-| **2** | **Project Title** | `CineVerse: Full-Stack Movie Discovery & Management Platform` |
-| **3** | **Names of All 3 Team Members** | 1. Samar (Lead)<br>2. Alex Rivera<br>3. Priyansh Sharma |
-| **4** | **Registration Numbers** | 1. `2024BCSE001`<br>2. `2024BCSE002`<br>3. `2024BCSE003` |
-| **5** | **GitHub Repository Link** | `https://github.com/Samarth-Varma-M/cineverse-mern-project` |
-| **6** | **Deployed Project Link** | *Add your live Vercel/Render link after deploying* |
-
----
-
-## ✅ Final Submission Checklist
-
-- [x] **Team of exactly 3 members** with unique names and registration numbers.
-- [x] **Unique Team Name & Project Title:** DevDynamos / CineVerse.
-- [x] **MERN Stack Architecture:** MongoDB Atlas, Express.js, React.js (Vite), Node.js.
-- [x] **Full-Stack Integration:** Frontend, backend, and cloud database connected and verified.
-- [x] **Complete CRUD Operations:** Create, Read, Update, Delete for movies and reviews.
-- [x] **Authentication & Authorization:** JWT token auth and bcrypt password hashing.
-- [x] **Responsive UI:** Clean matte-black cinema UI with debounced search and genre pills.
-- [x] **Clean Repository Structure:** Source code organized with `.gitignore` and comprehensive `README.md`.
-- [ ] **Presentation Upload:** Add your 7–10 slide PowerPoint presentation file to the repository.
-- [ ] **Project Deployment:** Deploy to Render & Vercel using the guide above.
-- [ ] **Spreadsheet Submission:** Submit your GitHub and deployment links into the class spreadsheet.
+**Deployment Link**: **
