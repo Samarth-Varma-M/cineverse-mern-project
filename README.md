@@ -7,7 +7,7 @@
 [![Vite](https://img.shields.io/badge/Vite-5.4-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
 
-**CineVerse** is a modern, responsive, full-stack movie management and discovery web platform developed for the **MERN Stack Web Development Training Program**. It features a clean, uncluttered matte-black cinema aesthetic, 36+ pre-seeded blockbuster and award-winning titles, MongoDB Atlas cloud persistence, an Express.js RESTful API, a React 18 SPA built with Vite, and complete CRUD, watchlist, review, and analytics capabilities.
+**CineVerse** is a modern, responsive, full-stack movie management and discovery web platform developed for the **MERN Stack Web Development Training Program**. It features a clean matte-black cinema aesthetic, 36+ pre-seeded blockbuster and award-winning titles, MongoDB Atlas cloud persistence, an Express.js RESTful API, a React 18 SPA built with Vite, and complete CRUD, watchlist, review, and analytics capabilities.
 
 ---
 
@@ -116,13 +116,6 @@ Project/
 │   ├── package.json
 │   ├── .env.example
 │   └── .env                    # Configured development environment
-├── presentation/               # PowerPoint Presentation (7-10 Slides)
-│   ├── CineVerse_MERN_Project_Presentation.pptx
-│   └── PRESENTATION_OUTLINE.md # Slide-by-slide speaker notes
-├── legacy-vanilla/             # Original HTML/CSS/JS prototype preserved
-├── DEPLOYMENT.md               # Step-by-step cloud deployment manual
-├── SPREADSHEET_SUBMISSION.md   # Copy-paste submission data for Section 6
-├── render.yaml                 # 1-Click Render infrastructure blueprint
 ├── package.json                # Root package for running client & server concurrently
 ├── .gitignore
 └── README.md
@@ -139,7 +132,7 @@ npm run install:all
 ```
 
 ### 2. Configure Environment (`server/.env`)
-Your MongoDB Atlas URI is already pre-configured in `server/.env`:
+Your MongoDB Atlas URI is pre-configured in `server/.env`:
 ```env
 PORT=5000
 NODE_ENV=development
@@ -162,23 +155,58 @@ npm run dev
 
 ---
 
-## 📊 Presentation (10 Slides)
+## 🌐 Deployment Guide (Render & Vercel)
 
-- **Presentation File:** [`presentation/CineVerse_MERN_Project_Presentation.pptx`](./presentation/CineVerse_MERN_Project_Presentation.pptx)
-- **Speaker Notes & Transcript:** [`presentation/PRESENTATION_OUTLINE.md`](./presentation/PRESENTATION_OUTLINE.md)
+### Step 1: Deploy Backend to Render.com
+1. Create a free account at [Render.com](https://render.com) and link your GitHub repository.
+2. Click **New +** -> **Web Service**.
+3. Settings:
+   - **Root Directory:** `server`
+   - **Build Command:** `npm install`
+   - **Start Command:** `node src/server.js`
+4. Add Environment Variables:
+   - `NODE_ENV`: `production`
+   - `PORT`: `5000`
+   - `MONGO_URI`: *Your MongoDB Atlas connection URI*
+   - `JWT_SECRET`: *Any secure secret string*
+   - `CLIENT_URL`: *Your deployed Vercel frontend URL*
+5. Click **Create Web Service** and copy your backend URL (e.g. `https://cineverse-api.onrender.com`).
+
+### Step 2: Deploy Frontend to Vercel.com
+1. Create a free account at [Vercel.com](https://vercel.com) and import your GitHub repository.
+2. Settings:
+   - **Root Directory:** `client`
+   - **Build Command:** `npm run build`
+   - **Output Directory:** `dist`
+3. Add Environment Variable:
+   - `VITE_API_URL`: *Your Render backend URL from Step 1*
+4. Click **Deploy**.
+
+---
+
+## 📋 Spreadsheet Submission Details
+
+| Field # | Item | Submitted Value |
+|:---:|:---|:---|
+| **1** | **Team Name** | `DevDynamos` |
+| **2** | **Project Title** | `CineVerse: Full-Stack Movie Discovery & Management Platform` |
+| **3** | **Names of All 3 Team Members** | 1. Samar (Lead)<br>2. Alex Rivera<br>3. Priyansh Sharma |
+| **4** | **Registration Numbers** | 1. `2024BCSE001`<br>2. `2024BCSE002`<br>3. `2024BCSE003` |
+| **5** | **GitHub Repository Link** | *Add your public repository link after pushing* |
+| **6** | **Deployed Project Link** | *Add your live Vercel/Render link after deploying* |
 
 ---
 
 ## ✅ Final Submission Checklist
 
-- [x] **Team Formation:** Exactly 3 members with designated roles and registration numbers.
-- [x] **Unique Project:** CineVerse (Full-Stack Movie Discovery & Management Platform).
-- [x] **MERN Stack:** MongoDB database, Express.js backend framework, React.js frontend library, Node.js runtime.
-- [x] **Full-Stack Integration:** Frontend, backend, and database fully integrated.
-- [x] **CRUD Operations:** Implemented for movies, favourites, and reviews.
-- [x] **Authentication:** JWT and bcrypt password encryption.
-- [x] **Responsive UI:** Clean matte-black cinema design system with debounced search, genre pills, modals, and analytics.
-- [x] **GitHub Repository:** Proper directory structure, `.gitignore`, and detailed `README.md`.
-- [x] **Presentation:** 10-slide PowerPoint presentation file (`.pptx`) and outline in the repository.
-- [x] **Deployment Documentation:** Complete setup guide in `DEPLOYMENT.md` and configuration files (`render.yaml`, `vercel.json`).
-- [x] **Spreadsheet Details:** Ready-to-copy submission table in `SPREADSHEET_SUBMISSION.md`.
+- [x] **Team of exactly 3 members** with unique names and registration numbers.
+- [x] **Unique Team Name & Project Title:** DevDynamos / CineVerse.
+- [x] **MERN Stack Architecture:** MongoDB Atlas, Express.js, React.js (Vite), Node.js.
+- [x] **Full-Stack Integration:** Frontend, backend, and cloud database connected and verified.
+- [x] **Complete CRUD Operations:** Create, Read, Update, Delete for movies and reviews.
+- [x] **Authentication & Authorization:** JWT token auth and bcrypt password hashing.
+- [x] **Responsive UI:** Clean matte-black cinema UI with debounced search and genre pills.
+- [x] **Clean Repository Structure:** Source code organized with `.gitignore` and comprehensive `README.md`.
+- [ ] **Presentation Upload:** Add your 7–10 slide PowerPoint presentation file to the repository.
+- [ ] **Project Deployment:** Deploy to Render & Vercel using the guide above.
+- [ ] **Spreadsheet Submission:** Submit your GitHub and deployment links into the class spreadsheet.
