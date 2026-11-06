@@ -1,0 +1,123 @@
+[
+  {
+    "title": "Inception",
+    "genre": "Sci-Fi",
+    "language": "English",
+    "releaseYear": 2010,
+    "rating": 8.8,
+    "duration": 148,
+    "description": "A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.",
+    "poster": "https://m.media-amazon.com/images/I/81p+xe8cbnL._AC_SY679_.jpg",
+    "isFavourite": true
+  },
+  {
+    "title": "Interstellar",
+    "genre": "Sci-Fi",
+    "language": "English",
+    "releaseYear": 2014,
+    "rating": 8.6,
+    "duration": 169,
+    "poster": "https://m.media-amazon.com/images/I/A1JVqNMI7UL._AC_SY679_.jpg",
+    "description": "A team of explorers travel through a wormhole in space in an attempt to ensure humanity's survival.",
+    "isFavourite": true
+  },
+  {
+    "title": "The Dark Knight",
+    "genre": "Action",
+    "language": "English",
+    "releaseYear": 2008,
+    "rating": 9.0,
+    "duration": 152,
+    "description": "When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, Batman must accept one of the greatest psychological and physical tests of his ability to fight injustice.",
+    "poster": "https://m.media-amazon.com/images/I/91KkWf50SoL._AC_SY679_.jpg",
+    "isFavourite": false
+  },
+  {
+    "title": "The Shawshank Redemption",
+    "genre": "Drama",
+    "language": "English",
+    "releaseYear": 1994,
+    "rating": 9.3,
+    "duration": 142,
+    "description": "Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.",
+    "poster": "https://m.media-amazon.com/images/M/MV5BMDFkYTc0MGEtZmNhMC00ZDIzLWFmNTEtODM1ZmRlYWMwMWFmXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_FMjpg_UX1000_.jpg",
+    "isFavourite": false
+  },
+  {
+    "title": "Parasite",
+    "genre": "Thriller",
+    "language": "Korean",
+    "releaseYear": 2019,
+    "rating": 8.5,
+    "duration": 132,
+    "description": "Greed and class discrimination threaten the newly formed symbiotic relationship between the wealthy Park family and the destitute Kim clan.",
+    "poster": "https://m.media-amazon.com/images/I/91cqEsyjd-L._AC_SY679_.jpg",
+    "isFavourite": true
+  },
+  {
+    "title": "Dangal",
+    "genre": "Biography",
+    "language": "Hindi",
+    "releaseYear": 2016,
+    "rating": 8.3,
+    "duration": 161,
+    "poster": "https://m.media-amazon.com/images/M/MV5BMTQ4MzQzMzM2Nl5BMl5BanBnXkFtZTgwMTQ1NzU3MDI@._V1_FMjpg_UX1000_.jpg",
+    "description": "Former wrestler Mahavir Singh Phogat and his two wrestler daughters struggle towards glory at the Commonwealth Games in the face of societal oppression.",
+    "isFavourite": true
+  },
+  {
+    "title": "La Haine",
+    "genre": "Drama",
+    "language": "French",
+    "releaseYear": 1995,
+    "rating": 8.1,
+    "duration": 98,
+    "poster": "https://m.media-amazon.com/images/M/MV5BN2FhYTU2YmQtZjcxNC00ZmI1LWI2ZTgtMTQ1MzQ1Nzg1YTE3XkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_FMjpg_UX1000_.jpg",
+    "description": "24 hours in the lives of three young men in the French suburbs the day after a violent riot.",
+    "isFavourite": false
+  },
+  {
+    "title": "Seven Samurai",
+    "genre": "Action",
+    "language": "Japanese",
+    "releaseYear": 1954,
+    "rating": 8.6,
+    "duration": 207,
+    "poster": "https://m.media-amazon.com/images/M/MV5BMTc5MDExMTg5Ml5BMl5BanBnXkFtZTgwNDY2OTg2OTE@._V1_FMjpg_UX1000_.jpg",
+    "description": "Farmers from a village exploited by bandits hire a veteran samurai for protection, who gathers six other samurai to join him.",
+    "isFavourite": true
+  },
+  {
+    "title": "Oldboy",
+    "genre": "Action",
+    "language": "Korean",
+    "releaseYear": 2003,
+    "rating": 8.4,
+    "duration": 120,
+    "poster": "https://m.media-amazon.com/images/M/MV5BMTI3NTQyMzU5M15BMl5BanBnXkFtZTcwMTM2MjgyMQ@@._V1_FMjpg_UX1000_.jpg",
+    "description": "After being kidnapped and imprisoned for fifteen years, Oh Dae-Su is released, only to find that he must find his captor in five days.",
+    "isFavourite": true
+  },
+  {
+    "title": "City of God",
+    "genre": "Crime",
+    "language": "Portuguese",
+    "releaseYear": 2002,
+    "rating": 8.6,
+    "duration": 130,
+    "poster": "https://m.media-amazon.com/images/M/MV5BOTMwYjc5ZmItYTFjZC00ZGQ3LTlkNTMtMjZiNTZlMWQzNzI5XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_FMjpg_UX1000_.jpg",
+    "description": "In the slums of Rio, two kids' paths diverge as one struggles to become a photographer and the other a kingpin.",
+    "isFavourite": true
+  },
+  {
+    "title": "Fight Club",
+    "genre": "Drama",
+    "language": "English",
+    "releaseYear": 1999,
+    "rating": 8.8,
+    "duration": 139,
+    "poster": "https://m.media-amazon.com/images/M/MV5BMmEzNTkxYjQtZTc0MC00YTVjLTg5ZTEtZWMwOWVlYzY0NWIwXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_FMjpg_UX1000_.jpg",
+    "description": "An insomniac office worker and a devil-may-care soap maker form an underground fight club that evolves into much more.",
+    "isFavourite": true
+  }
+]

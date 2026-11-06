@@ -1,0 +1,137 @@
+{
+  "movies": [
+    {
+      "id": "1",
+      "title": "Inception",
+      "genre": "Sci-Fi",
+      "language": "English",
+      "releaseYear": 2010,
+      "rating": 8.8,
+      "duration": 148,
+      "description": "A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.",
+      "poster": "https://m.media-amazon.com/images/I/81p+xe8cbnL._AC_SY679_.jpg",
+      "isFavourite": true
+    },
+    {
+      "id": "2",
+      "title": "Interstellar",
+      "genre": "Sci-Fi",
+      "language": "English",
+      "releaseYear": 2014,
+      "rating": 8.6,
+      "duration": 169,
+      "poster": "https://m.media-amazon.com/images/I/A1JVqNMI7UL._AC_SY679_.jpg",
+      "description": "A team of explorers travel through a wormhole in space in an attempt to ensure humanity's survival.",
+      "isFavourite": true
+    },
+    {
+      "id": "3",
+      "title": "The Dark Knight",
+      "genre": "Action",
+      "language": "English",
+      "releaseYear": 2008,
+      "rating": 9,
+      "duration": 152,
+      "description": "When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, Batman must accept one of the greatest psychological and physical tests of his ability to fight injustice.",
+      "poster": "https://m.media-amazon.com/images/I/91KkWf50SoL._AC_SY679_.jpg",
+      "isFavourite": false
+    },
+    {
+      "id": "4",
+      "title": "The Shawshank Redemption",
+      "genre": "Drama",
+      "language": "English",
+      "releaseYear": 1994,
+      "rating": 9.3,
+      "duration": 142,
+      "description": "Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.",
+      "poster": "https://m.media-amazon.com/images/M/MV5BMDFkYTc0MGEtZmNhMC00ZDIzLWFmNTEtODM1ZmRlYWMwMWFmXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_FMjpg_UX1000_.jpg",
+      "isFavourite": false
+    },
+    {
+      "id": "5",
+      "title": "Parasite",
+      "genre": "Thriller",
+      "language": "Korean",
+      "releaseYear": 2019,
+      "rating": 8.5,
+      "duration": 132,
+      "description": "Greed and class discrimination threaten the newly formed symbiotic relationship between the wealthy Park family and the destitute Kim clan.",
+      "poster": "https://m.media-amazon.com/images/I/91cqEsyjd-L._AC_SY679_.jpg",
+      "isFavourite": true
+    },
+    {
+      "title": "Dangal",
+      "genre": "Biography",
+      "language": "Hindi",
+      "releaseYear": 2016,
+      "rating": 8.3,
+      "duration": 161,
+      "poster": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSu5vUH9Bs2al0zpbXA7n_bW39fMmyPCbnaT6jmLAOqBg&s=10",
+      "description": "Former wrestler Mahavir Singh Phogat and his two wrestler daughters struggle towards glory at the Commonwealth Games in the face of societal oppression.",
+      "isFavourite": true,
+      "id": "8"
+    },
+    {
+      "title": "La Haine",
+      "genre": "Drama",
+      "language": "French",
+      "releaseYear": 1995,
+      "rating": 8.1,
+      "duration": 98,
+      "poster": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9znbTOpC8VbowI0jxc1UPeB0rhNLDVNKNQz0QdQGDgA&s=10",
+      "description": "24 hours in the lives of three young men in the French suburbs the day after a violent riot.",
+      "isFavourite": false,
+      "id": "10"
+    },
+    {
+      "title": "Seven Samurai",
+      "genre": "Action",
+      "language": "Japanese",
+      "releaseYear": 1954,
+      "rating": 8.6,
+      "duration": 207,
+      "poster": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3CJn5AwHwZ2qWMOfqtzcVG5YysYImo2EafFDJ2eYX9A&s=10",
+      "description": "Farmers from a village exploited by bandits hire a veteran samurai for protection, who gathers six other samurai to join him.",
+      "isFavourite": true,
+      "id": "13"
+    },
+    {
+      "title": "Oldboy",
+      "genre": "Action",
+      "language": "Korean",
+      "releaseYear": 2003,
+      "rating": 8.4,
+      "duration": 120,
+      "poster": "data:image/png;base64,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",
+      "description": "After being kidnapped and imprisoned for fifteen years, Oh Dae-Su is released, only to find that he must find his captor in five days.",
+      "isFavourite": true,
+      "id": "15"
+    },
+    {
+      "title": "City of God",
+      "genre": "Crime",
+      "language": "Portuguese",
+      "releaseYear": 2002,
+      "rating": 8.6,
+      "duration": 130,
+      "poster": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKhiXM3502gAPTvYq33bC0YGw5BEVhiVSy8ATzFkxVA9EKA6HCQ_1PRLw&s=10",
+      "description": "In the slums of Rio, two kids' paths diverge as one struggles to become a photographer and the other a kingpin.",
+      "isFavourite": true,
+      "id": "19"
+    },
+    {
+      "title": "Fight Club",
+      "genre": "Comedy",
+      "language": "Italian",
+      "releaseYear": 1997,
+      "rating": 8.6,
+      "duration": 116,
+      "poster": "https://m.media-amazon.com/images/M/MV5BMmEzNTkxYjQtZTc0MC00YTVjLTg5ZTEtZWMwOWVlYzY0NWIwXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_FMjpg_UX1000_.jpg",
+      "description": "When an open-minded Jewish waiter and his son become victims of the Holocaust, he uses a perfect mixture of will, humor, and imagination to protect his son.",
+      "isFavourite": true,
+      "id": "20"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
